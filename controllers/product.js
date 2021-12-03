@@ -1,7 +1,12 @@
 const data = require('../assets/data');
 
 function getProducts(query) {
-  return data;
+
+  myData = data.filter(function (el) {
+    return (el.name.includes(query));
+  });
+
+  return myData;
 }
 
 module.exports = { getProducts };

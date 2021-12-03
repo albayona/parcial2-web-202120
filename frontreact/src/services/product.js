@@ -3,7 +3,7 @@ const SERVER_API_PRODUCT = `${DOMAIN}/api/products`;
 
 const searchProductsURL = (searchKey) =>
   searchKey
-    ? `${SERVER_API_PRODUCT}?q=${encodeURIComponent(searchKey)}`
+    ? `${SERVER_API_PRODUCT}/${encodeURIComponent(searchKey)}`
     : `${SERVER_API_PRODUCT}`;
 
 /**

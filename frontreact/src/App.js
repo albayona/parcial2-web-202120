@@ -13,6 +13,8 @@ function App() {
   const [language, setLanguage] = useState(LOCALES.SPANISH);
 
   const setSearchkey = (query) => {
+
+      console.log(query)
     setSearchState({ searchKey: query });
   };
 
@@ -26,7 +28,7 @@ function App() {
           <Route
             exact
             path='/'
-            element={<Home searchKey={searchState.searchKey} />}
+             element={<Home searchKey={searchState.searchKey} />}
           />
           <Route exact path='/report' element={<Report />} />
         </Routes>
