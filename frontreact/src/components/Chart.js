@@ -13,6 +13,9 @@ export const Chart = ({width = 600, height = 600, data, searchKey}) => {
             d3.select("g").remove();
         }
 
+
+
+        
         const svg = d3.select(barChart.current);
         svg.attr('width', width);
         svg.attr('height', height);
