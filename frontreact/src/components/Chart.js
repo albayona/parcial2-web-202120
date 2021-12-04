@@ -9,9 +9,14 @@ export const Chart = ({width = 600, height = 600, data, searchKey}) => {
         const iwidth = width - margin.left - margin.right;
         const iheight = height - margin.top - margin.bottom;
 
+        if (barChart.current) {
+            d3.select("g").remove();
+        }
+
         const svg = d3.select(barChart.current);
         svg.attr('width', width);
         svg.attr('height', height);
+
 
         let g = svg
             .append('g')
@@ -21,7 +26,7 @@ export const Chart = ({width = 600, height = 600, data, searchKey}) => {
 
         const x = d3
             .scaleBand()
-             .domain(data.map((d) => d.name))
+            .domain(data.map((d) => d.name))
             .range([0, iwidth])
             .padding(0.1);
 
@@ -49,7 +54,7 @@ export const Chart = ({width = 600, height = 600, data, searchKey}) => {
             .call(d3.axisLeft(y));
 
 
-    }, [data, searchKey]);
+    }, [data]);
 
     return (
         <div id='chartArea'>
